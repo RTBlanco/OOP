@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class CLI {
+  static public void run() {
+
+    // System.out.println("press one");
+    Boolean running = true;
+
+    while(running) {
+      CLI.questions();
+      Scanner input = new Scanner(System.in);
+      String userInput = input.nextLine();
+
+      switch (userInput) {
+        case "1":
+          System.out.println("user pressed 1\n");
+          break;
+        case "2":
+          System.out.println("user pressed 2\n");
+          break;
+        case "close":
+          running = !running;
+          break;
+        default:
+          break;
+      }
+      
+      
+      // input.close();
+    }  
+  }
+
+  private static void questions() {
+    String question = "(1) press number 1\n"
+                    + "(2) press number 2\n"
+                    + "(close) to end program\n";
+
+    System.out.println(question);
+  }
+}
