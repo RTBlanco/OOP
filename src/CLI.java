@@ -7,7 +7,7 @@ public class CLI {
     Boolean running = true;
 
     while(running) {
-      CLI.questions();
+      questions();
       Scanner input = new Scanner(System.in);
       String userInput = input.nextLine();
 
