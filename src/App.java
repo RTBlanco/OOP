@@ -9,7 +9,8 @@ public class App {
 
         
         for (int i = 0; i < ronny.pets.size() ; i++) {
-            System.out.println(ronny.pets.get(i).name);
+            Pet animal = ronny.pets.get(i);
+            System.out.println(animal.name);
         }
         
     }
