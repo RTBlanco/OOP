@@ -2,8 +2,8 @@ public class Pet {
   String name;
   Owner owner;
 
-  public Pet(String petName, Owner owner) {
-    this.name = petName;
+  public Pet(String name, Owner owner) {
+    this.name = name;
     this.owner = owner;
   }
 }

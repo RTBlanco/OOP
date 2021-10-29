@@ -4,10 +4,13 @@ public class App {
         ronny.pets.add(new Pet("Rosy", ronny));
         ronny.pets.add(new Pet("flash", ronny));
         
+        Dog dog = new Dog("lucy", ronny, "rat");
+        ronny.pets.add(dog);
 
-        for (Pet i : ronny.pets){
-            System.out.println(i.name);
-        }
         
+        for (int i = 0; i < ronny.pets.size() ; i++) {
+            Object animal = ronny.pets.get(i);
+            System.out.println(animal.name);
+        }
     }
 }
