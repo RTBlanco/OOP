@@ -6,4 +6,8 @@ public class Pet {
     this.name = name;
     this.owner = owner;
   }
+
+  public void getName() {
+    System.out.println(this.name);
+  }
 }
