@@ -3,9 +3,7 @@ import java.util.Scanner;
 public class CLI {
   static public void run() {
 
-    // System.out.println("press one");
     Boolean running = true;
-
     while(running) {
       questions();
       Scanner input = new Scanner(System.in);
