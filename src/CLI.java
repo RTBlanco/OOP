@@ -11,7 +11,7 @@ public class CLI {
 
       switch (userInput) {
         case "1":
-          System.out.println("user pressed 1\n");
+          showPets();
           break;
         case "2":
           System.out.println("user pressed 2\n");
@@ -27,7 +27,7 @@ public class CLI {
   }
 
   private static void questions() {
-    String question = "(1) view pets\n"
+    String question = "\n(1) view pets\n"
                     + "(2) add new pet\n"
                     + "(3) view owners\n"
                     + "(4) add new owners"
@@ -37,10 +37,16 @@ public class CLI {
   }
 
   private static void showPets() {
-
+    if ( Pet.all.size() > 0) {
+      for(Pet pet: Pet.all) {
+        System.out.println(pet);
+      }
+    } else {
+      System.out.println("No pets in database\n");
+    }
   }
 
   private static void showOwners() {
-    
+
   }
 }
