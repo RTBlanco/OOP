@@ -68,8 +68,15 @@ public class CLI {
   }
 
   private static void addOwner(Scanner userInput) {
-    System.out.print("Owner Name: ");
-    String firstName = userInput.nextLine();
-    new Owner(firstName);
+    while(true) {
+      String firstName = userInput.nextLine();
+      System.out.print("Owner Name: ");
+      if (firstName.length() <= 0) {
+        System.out.println("Name need to be at least one character");
+      } else {
+        new Owner(firstName);
+        break;
+      }
+    }
   }
  }
