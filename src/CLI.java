@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class CLI {
   static public void run() {
-
-    // System.out.println("press one");
     Boolean running = true;
 
     while(running) {
@@ -25,9 +23,6 @@ public class CLI {
         default:
           break;
       }
-      
-      
-      // input.close();
     }  
   }
 
