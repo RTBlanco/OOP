@@ -1,12 +1,15 @@
 import java.util.Scanner;
 
 public class CLI {
-  static public void run() {
+  public static void run() {
+    menu();
+  }
 
+  private static void menu() {
     Boolean running = true;
+    Scanner input = new Scanner(System.in);
     while(running) {
       questions();
-      Scanner input = new Scanner(System.in);
       String userInput = input.nextLine();
 
       switch (userInput) {
@@ -14,7 +17,15 @@ public class CLI {
           showPets();
           break;
         case "2":
+          // adds new pet
           System.out.println("user pressed 2\n");
+          break;
+        case "3":
+          showOwners();
+          break;
+        case "4":
+          // adds new owner
+          addOwner(input);
           break;
         case "close":
           input.close();
@@ -30,7 +41,7 @@ public class CLI {
     String question = "\n(1) view pets\n"
                     + "(2) add new pet\n"
                     + "(3) view owners\n"
-                    + "(4) add new owners"
+                    + "(4) add new owners\n"
                     + "(close) to end program\n";
 
     System.out.println(question);
@@ -39,7 +50,7 @@ public class CLI {
   private static void showPets() {
     if ( Pet.all.size() > 0) {
       for(Pet pet: Pet.all) {
-        System.out.println(pet);
+        System.out.println(pet.name);
       }
     } else {
       System.out.println("No pets in database\n");
@@ -47,6 +58,18 @@ public class CLI {
   }
 
   private static void showOwners() {
-
+    if ( Owner.all.size() > 0) {
+      for(Owner owner: Owner.all) {
+        System.out.println(owner.name);
+      }
+    } else {
+      System.out.println("No Owners in database\n");
+    }
   }
-}
+
+  private static void addOwner(Scanner userInput) {
+    System.out.print("Owner Name: ");
+    String firstName = userInput.nextLine();
+    new Owner(firstName);
+  }
+ }

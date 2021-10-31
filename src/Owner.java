@@ -6,11 +6,11 @@ public class Owner {
   // If needed to create ArrayList that hold other type that are not 
   // subclasses (for ex: Owner and Pet )-> ArrayList<Object>
   public ArrayList<Pet> pets = new ArrayList<Pet>();
-  static ArrayList<Owner> owners = new ArrayList<Owner>();
+  static ArrayList<Owner> all = new ArrayList<Owner>();
 
   public Owner(String ownerName) {
     this.name = ownerName;
-    owners.add(this);
+    all.add(this);
   }
 
 }
