@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Owner {
   String name;
+  Integer id = all.size() + 1;
   // Create an ArrayList containing Pet objects and Pet object subclasses 
   // If needed to create ArrayList that hold other type that are not 
   // subclasses (for ex: Owner and Pet )-> ArrayList<Object>

@@ -1,15 +1,11 @@
 import java.util.Scanner;
 
 public class CLI {
-<<<<<<< HEAD
-  static public void run() {
-=======
   public static void run() {
     menu();
   }
 
   private static void menu() {
->>>>>>> 5d52f635ff8c535b881f27fabbe51b0863d9e87d
     Boolean running = true;
     Scanner input = new Scanner(System.in);
     while(running) {
@@ -54,7 +50,7 @@ public class CLI {
   private static void showPets() {
     if ( Pet.all.size() > 0) {
       for(Pet pet: Pet.all) {
-        System.out.println(pet.name);
+        System.out.printf("(%o)%s\n", pet.id, pet.name);
       }
     } else {
       System.out.println("No pets in database\n");
@@ -64,7 +60,7 @@ public class CLI {
   private static void showOwners() {
     if ( Owner.all.size() > 0) {
       for(Owner owner: Owner.all) {
-        System.out.println(owner.name);
+        System.out.printf("(%o)%s\n", owner.id, owner.name);
       }
     } else {
       System.out.println("No Owners in database\n");
@@ -73,8 +69,8 @@ public class CLI {
 
   private static void addOwner(Scanner userInput) {
     while(true) {
-      String firstName = userInput.nextLine();
       System.out.print("Owner Name: ");
+      String firstName = userInput.nextLine();
       if (firstName.length() <= 0) {
         System.out.println("Name need to be at least one character");
       } else {

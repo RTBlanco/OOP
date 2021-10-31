@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Pet {
   String name;
   Owner owner;
+  Integer id = all.size() + 1;
 
   static ArrayList<Pet> all = new ArrayList<Pet>();
 
