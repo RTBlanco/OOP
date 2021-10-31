@@ -79,4 +79,22 @@ public class CLI {
       }
     }
   }
+
+  private static void addPet(Scanner userInput) {
+    while(true) {
+      System.out.print("Pet Name: ");
+      String firstName = userInput.nextLine();
+      System.out.print("Owner ID: ");
+      Integer userId = userInput.nextLine();
+
+      if (firstName.length() <= 0) {
+        System.out.println("Name need to be at least one character");
+      } else if () {
+
+      } else {
+        new Owner(firstName);
+        break;
+      }
+    }
+  }
  }

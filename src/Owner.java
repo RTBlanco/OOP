@@ -14,4 +14,12 @@ public class Owner {
     all.add(this);
   }
 
+  static public Owner findById(Integer id) {
+    for (Owner owner: Owner.all ) {
+      if (id == owner.id) {
+        return owner;
+      }
+    }
+  }
+
 }
