@@ -23,9 +23,6 @@ public class CLI {
         default:
           break;
       }
-      
-      
-      // input.close();
     }  
   }
 
