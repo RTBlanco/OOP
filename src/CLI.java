@@ -27,10 +27,20 @@ public class CLI {
   }
 
   private static void questions() {
-    String question = "(1) press number 1\n"
-                    + "(2) press number 2\n"
+    String question = "(1) view pets\n"
+                    + "(2) add new pet\n"
+                    + "(3) view owners\n"
+                    + "(4) add new owners"
                     + "(close) to end program\n";
 
     System.out.println(question);
+  }
+
+  private static void showPets() {
+
+  }
+
+  private static void showOwners() {
+    
   }
 }
