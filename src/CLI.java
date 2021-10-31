@@ -19,6 +19,7 @@ public class CLI {
           System.out.println("user pressed 2\n");
           break;
         case "close":
+          input.close();  
           running = !running;
           break;
         default:
