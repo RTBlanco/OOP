@@ -10,10 +10,12 @@ public class Pet {
   public Pet(String name, Owner owner) {
     this.name = name;
     this.owner = owner;
+    all.add(this);
   }
 
   public Pet(String name) {
     this.name = name;
+    all.add(this);
   }
 
   public void getName() {
