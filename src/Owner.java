@@ -15,11 +15,22 @@ public class Owner {
   }
 
   static public Owner findById(Integer id) {
-    for (Owner owner: Owner.all ) {
-      if (id == owner.id) {
-        return owner;
+    // for (Owner owner: all ) {
+    //   if (id == owner.id) {
+    //     return owner;   
+    //   }
+    // }
+    return all.get(id - 1);
+  }
+
+  static public Boolean userExist(Integer id) {
+    for (Owner owner: all) {
+      if ( owner.id == id ) {
+        return true;
       }
     }
+
+    return false;
   }
 
 }
