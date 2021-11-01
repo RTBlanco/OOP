@@ -18,7 +18,7 @@ public class CLI {
           break;
         case "2":
           // adds new pet
-          System.out.println("user pressed 2\n");
+          addPet(input);
           break;
         case "3":
           showOwners();
@@ -49,8 +49,9 @@ public class CLI {
 
   private static void showPets() {
     if ( Pet.all.size() > 0) {
+      System.out.println("ID | NAME | OWNER");
       for(Pet pet: Pet.all) {
-        System.out.printf("(%o)%s\n", pet.id, pet.name);
+        System.out.printf("%o | %s | %s\n", pet.id, pet.name, pet.owner.name);
       }
     } else {
       System.out.println("No pets in database\n");
@@ -59,8 +60,9 @@ public class CLI {
 
   private static void showOwners() {
     if ( Owner.all.size() > 0) {
+      System.out.println("ID | NAME ");
       for(Owner owner: Owner.all) {
-        System.out.printf("(%o)%s\n", owner.id, owner.name);
+        System.out.printf("%o | %s\n", owner.id, owner.name);
       }
     } else {
       System.out.println("No Owners in database\n");
@@ -83,16 +85,20 @@ public class CLI {
   private static void addPet(Scanner userInput) {
     while(true) {
       System.out.print("Pet Name: ");
-      String firstName = userInput.nextLine();
+      String petName = userInput.nextLine();
       System.out.print("Owner ID: ");
-      Integer userId = userInput.nextLine();
+      Integer userId = Integer.parseInt(userInput.nextLine());
 
-      if (firstName.length() <= 0) {
+      if (petName.length() <= 0) {
         System.out.println("Name need to be at least one character");
-      } else if () {
-
+      } else if ( !Owner.userExist(userId)) {
+        System.out.println("User must exist in the database");
       } else {
-        new Owner(firstName);
+        Owner owner = Owner.findById(userId);
+        Pet newPet = new Pet(petName, owner);
+        owner.pets.add(newPet);
+
+        System.out.println("Pet Added!\n");
         break;
       }
     }
