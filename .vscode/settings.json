@@ -1,4 +1,8 @@
 {
     "java.project.sourcePaths": ["src"],
-    "java.project.outputPath": "bin"
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/mnt/c/Users/ronny/Desktop/jOOQ-3.15.4/jOOQ-3.15.4/jOOQ-javadoc/jooq-3.15.4-javadoc.jar"
+    ]
 }
